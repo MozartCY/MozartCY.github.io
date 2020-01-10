@@ -79,11 +79,15 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="[toc] 初识Kafka主题和分区 kafka的消息通过主题进行分类，主题可以分为若干个分区 消息以追加的方式写入分区，然后以先入先出的顺序读取 kafka只能保证单个分区的消息顺序  生产者和消费者 生产者默认情况下把消息均衡地分布到主题的所有分区上，如果需要写到特定的分区，通常是通过消息键和分区器来实现的，分区器为键生成一个散列值，并将其映射到指定的分区上 消费者可以订阅一个或者多个主题 消">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kafka笔记">
+<meta property="og:url" content="http://yoursite.com/2020/01/09/Kafka%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[toc] 初识Kafka主题和分区 kafka的消息通过主题进行分类，主题可以分为若干个分区 消息以追加的方式写入分区，然后以先入先出的顺序读取 kafka只能保证单个分区的消息顺序  生产者和消费者 生产者默认情况下把消息均衡地分布到主题的所有分区上，如果需要写到特定的分区，通常是通过消息键和分区器来实现的，分区器为键生成一个散列值，并将其映射到指定的分区上 消费者可以订阅一个或者多个主题 消">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-01-09T09:53:25.579Z">
+<meta property="article:modified_time" content="2020-01-09T09:53:43.021Z">
 <meta property="article:author" content="chen ye">
 <meta name="twitter:card" content="summary">
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/01/09/Kafka笔记/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>Kafka笔记 | Hexo</title>
   
 
 
@@ -140,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,9 +217,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -246,9 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/09/Kafka%E7%AC%94%E8%AE%B0/" itemprop="url">Kafka笔记</a></h1>
+          <h1 class="post-title" itemprop="name headline">Kafka笔记</h1>
         
 
         <div class="post-meta">
@@ -298,9 +299,7 @@
       
 
       
-        
-          
-            <p>[toc]</p>
+        <p>[toc]</p>
 <h1 id="初识Kafka"><a href="#初识Kafka" class="headerlink" title="初识Kafka"></a>初识Kafka</h1><h2 id="主题和分区"><a href="#主题和分区" class="headerlink" title="主题和分区"></a>主题和分区</h2><ol>
 <li>kafka的消息通过主题进行分类，主题可以分为若干个分区</li>
 <li>消息以追加的方式写入分区，然后以先入先出的顺序读取</li>
@@ -376,8 +375,6 @@
 <li>在首领副本失效的时候，只有同步的副本才有可能被选为新首领</li>
 </ol>
 
-          
-        
       
     </div>
     
@@ -394,131 +391,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/09/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chen ye">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/09/test/" itemprop="url">test</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-09T17:38:34+08:00">
-                2020-01-09
-              </time>
+              <a href="/2020/01/09/test/" rel="next" title="test">
+                <i class="fa fa-chevron-left"></i> test
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -528,142 +422,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/09/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chen ye">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/09/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-09T14:58:25+08:00">
-                2020-01-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites-test"><a href="#Deploy-to-remote-sites-test" class="headerlink" title="Deploy to remote sites test"></a>Deploy to remote sites test</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -671,6 +434,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -691,8 +458,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -734,6 +510,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#初识Kafka"><span class="nav-number">1.</span> <span class="nav-text">初识Kafka</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#主题和分区"><span class="nav-number">1.1.</span> <span class="nav-text">主题和分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产者和消费者"><span class="nav-number">1.2.</span> <span class="nav-text">生产者和消费者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#broker和集群"><span class="nav-number">1.3.</span> <span class="nav-text">broker和集群</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka生产者——向kafka写入数据"><span class="nav-number">2.</span> <span class="nav-text">Kafka生产者——向kafka写入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建kafka生产者"><span class="nav-number">2.1.</span> <span class="nav-text">创建kafka生产者</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步发送消息"><span class="nav-number">2.2.</span> <span class="nav-text">同步发送消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步发送消息"><span class="nav-number">2.3.</span> <span class="nav-text">异步发送消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产者的配置"><span class="nav-number">2.4.</span> <span class="nav-text">生产者的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分区"><span class="nav-number">2.5.</span> <span class="nav-text">分区</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka消费者——从Kafka读取数据"><span class="nav-number">3.</span> <span class="nav-text">Kafka消费者——从Kafka读取数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#消费者和消费群组"><span class="nav-number">3.1.</span> <span class="nav-text">消费者和消费群组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消费者群组和分区再均衡"><span class="nav-number">3.2.</span> <span class="nav-text">消费者群组和分区再均衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交和偏移量"><span class="nav-number">3.3.</span> <span class="nav-text">提交和偏移量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提交当前偏移量"><span class="nav-number">3.4.</span> <span class="nav-text">提交当前偏移量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异步提交"><span class="nav-number">3.5.</span> <span class="nav-text">异步提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步和异步组合提交"><span class="nav-number">3.6.</span> <span class="nav-text">同步和异步组合提交</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#深入kafka"><span class="nav-number">4.</span> <span class="nav-text">深入kafka</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集群成员关系"><span class="nav-number">4.1.</span> <span class="nav-text">集群成员关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制"><span class="nav-number">4.2.</span> <span class="nav-text">复制</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -874,6 +666,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
